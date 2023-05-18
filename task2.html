@@ -1,0 +1,59 @@
+<h1 style="text-align: center;">Table</h1>
+<table border="1" cellpadding="8" style="margin: auto;background-color: rgba(158, 160, 161, 0.76);">
+    <tr style="background-color: antiquewhite;color: black; text-align: center;">
+        <td>Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+    </tr>
+    <tbody id="record">
+
+    </tbody>
+</table>
+
+<script type="text/javascript">
+
+    let table="";
+    class demo{
+        constructor(name,email,phone){  
+     this.data = [
+                {
+                    name : "jay",
+                    email : "jay@gmail.com",
+                    phone : "12345 25648",
+                },
+                {
+                    name : "ajay",
+                    email : "ajay@gmail.com",
+                    phone : "12345 32694",
+                },
+                {
+                    name : "vijay",
+                    email : "vijay@gmail.com",
+                    phone : "12345 14568",
+                },
+                {
+                    name : "ashish",
+                    email : "ashish@gmail.com",
+                    phone : "12345 32658",
+                },
+            ];
+        }
+     detail = () =>{
+
+        this.data.map((val)=>{
+            table += `
+                    <tr>
+                        <td>${val.name}</td>
+                        <td>${val.email}</td>
+                        <td>${val.phone}</td>
+                    </tr>
+                `
+
+        })
+        document.getElementById('record').innerHTML=table;
+     }
+    }
+
+    let obj=new demo();
+    obj.detail();
+</script>
